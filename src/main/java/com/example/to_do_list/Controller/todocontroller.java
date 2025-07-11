@@ -38,10 +38,4 @@ public class todocontroller {
         return "Task marked as finished";
     }
 
-    @PutMapping("/tasks/{id}")
-    public String updateTask(@PathVariable String id, @RequestBody todolist task) {
-        todoservice.updateTask(id, task);
-        return "Task updated successfully";
-    }
-
 }

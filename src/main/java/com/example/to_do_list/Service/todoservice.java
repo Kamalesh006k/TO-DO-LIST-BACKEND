@@ -29,16 +29,7 @@ public class todoservice {
     public void markAsFinished(String id) {
         todolist task = todorepo.findById(id).orElse(null);
         if (task != null) {
-            task.setStatus(!task.isStatus()); // Toggle status: true → false, false → true
-            todorepo.save(task);
-        }
-    }
-
-    public void updateTask(String id, todolist updatedTask) {
-        todolist task = todorepo.findById(id).orElse(null);
-        if (task != null) {
-            task.setTask(updatedTask.getTask());
-            task.setStatus(updatedTask.isStatus());
+            task.setStatus(!task.isStatus());
             todorepo.save(task);
         }
     }
